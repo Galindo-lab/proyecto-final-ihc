@@ -1,0 +1,52 @@
+[
+    {
+        "question" : "¿Como se representa el oro en la tabla periodica?",
+        "answer" : "AU",
+        "options": [
+            "OR",
+            "OS",
+            "AT",
+            "AU"
+        ]
+    },
+    {
+        "question" : "¿Como se representa el hidrogeno en la tabla periodica?",
+        "answer" : "H",
+        "options": [
+            "H",
+            "O",
+            "Hg",
+            "He"
+        ]
+    },
+    {
+        "question" : "¿Cual es el estado de agregacion del sol?",
+        "answer" : "Plasma",
+        "options": [
+            "Plasma",
+            "Solido",
+            "Liquido",
+            "Gas"
+        ]
+    },
+    {
+        "question" : "¿Cual es el estado de agregacion del butano?",
+        "answer" : "Gas",
+        "options": [
+            "Gas",
+            "Solido",
+            "Liquido",
+            "Plasma"
+        ]
+    },
+    {
+        "question" : "¿Cual es el estado de agregacion del hielo?",
+        "answer" : "Solido",
+        "options": [
+            "Solido",
+            "Liquido",
+            "Gas",
+            "Plasma"
+        ]
+    }
+]
