@@ -6,27 +6,25 @@ from src.Bitmaptext import Bitmaptext
 
 
 class Board:
-    """Tablero donde se mostraran las preguntas"""
+    """"""
 
     def __init__(self):
-        self.question = Questions()
+        self.question = ""
+        self.options = []
 
-    def set(self, question: src.Question):
-        
-
+    def set(self, question: str, options: list) -> None :
+        self.question = question
+        self.options = options
+    
     def display_border(self, surface: pygame.Surface) -> None:
         rect = pygame.Rect(15, 15, 770, 570)
         pygame.draw.rect(surface, Color.WHITE, rect, 2)
 
     def display_question(self, surface: pygame.Surface) -> None:
-        Bitmaptext.display(surface,
-                           self.question.question(),
-                           30,
-                           50,
-                           font=Bitmaptext.TITLE)
-
+        Bitmaptext.display(surface, self.question, 30, 50, font=Bitmaptext.TITLE)
+        
     def display_answers(self, surface: pygame.Surface) -> None:
-        for cont, option in enumerate(self.question.options()):
+        for cont, option in enumerate(self.options):
             Bitmaptext.display(surface, f"{cont}) {option}", 50,
                                cont * 25 + 100)
 

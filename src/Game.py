@@ -1,13 +1,13 @@
-
 import pygame
 
-from src.Board2 import Board
+from src.Board import Board
 from src.Questions import Questions
+
 
 class Game:
     """Gestor de eventos"""
 
-    CHRONOMETER = pygame.USEREVENT+1
+    CHRONOMETER = pygame.USEREVENT + 1
 
     def __init__(self):
         self.question = Questions()
@@ -23,13 +23,10 @@ class Game:
         for e in pygame.event.get():
             if e.type == pygame.QUIT:
                 pygame.quit()
-            
+
             if e.type == Game.CHRONOMETER:
                 self.next_question()
-        
 
     def draw(self, surface):
         self.board.draw(surface)
-        pass
-    
-    
+
