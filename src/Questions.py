@@ -32,7 +32,7 @@ class Questions:
     def options(self) -> list:
         return self.question_attrib(Questions.OPTIONS)
 
-    def answers(self) -> str:
+    def answer(self) -> str:
         return self.question_attrib(Questions.ANSWER)
 
     def question(self) -> str:

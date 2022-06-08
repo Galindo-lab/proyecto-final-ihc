@@ -29,7 +29,12 @@ class SubscribeMQTT:
 
     def get_data(self):
         global subscribe_data
-        return subscribe_data
+        data = subscribe_data
+        return data
+
+    def clear_data(self):
+        global subscribe_data
+        subscribe_data = ""
 
     def subscribe(self):
         def on_message(client, userdata, msg):
@@ -38,7 +43,10 @@ class SubscribeMQTT:
             print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
         self.client.subscribe(self.topic)
         self.client.on_message = on_message
-        self.client.loop_start()
+        # self.client.loop_start()
 
+    def start(self):
+        self.client.loop_start()
+        
     def stop(self):
         self.client.loop_stop()
