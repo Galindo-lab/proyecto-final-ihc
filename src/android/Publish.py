@@ -17,9 +17,11 @@ class PublisherMQTT:
     def connect_mqtt(self):
         def on_connect(client, userdata, flags, rc):
             if rc == 0:
-                print("Connected to MQTT Broker!")
+                # print("Connected to MQTT Broker!")
+                print("✓")
             else:
-                print("Failed to connect, return code %d\n", rc)
+                # print("Failed to connect, return code %d\n", rc)
+                print("✕")
 
         self.client = mqtt_client.Client(self.client_id)
         self.client.username_pw_set(self.username, self.password)
@@ -33,9 +35,9 @@ class PublisherMQTT:
         topic = self.topic
         
         if status == 0:
-            print(f"Send `{msg}` to topic `{topic}`")
+            # print(f"Send `{msg}` to topic `{topic}`")
         else:
-            print(f"Failed to send message to topic {topic}")
+            # print(f"Failed to send message to topic {topic}")
             
 
     

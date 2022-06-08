@@ -1,14 +1,15 @@
 
+import time
+
 from Publish import PublisherMQTT
 
 def x():
     foo = PublisherMQTT()
     foo.connect_mqtt()
+    time.sleep(2)
     while True:
         a = input("entrada: ")
-        if a != "salir":
-            foo.publish(a)
-        else:
-            break
+        if a == "salir": break
+        foo.publish(a)
 
 x()

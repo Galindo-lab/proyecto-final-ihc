@@ -22,21 +22,25 @@ class Game:
 
     def next_question(self):
         self.question.next_question()
-        self.board.set(self.question.question(), self.question.options())
+        self.board.set(
+            self.question.question(),
+            self.question.options()
+        )
 
     def update(self, dt):
-        self.listen_tel.client.loop_start()
+        # self.listen_tel.client.loop_start()
         
         for e in pygame.event.get():
             if e.type == pygame.QUIT:
                 pygame.quit()
 
             if e.type == Game.CHRONOMETER:
+                print(self.listen_tel.get_data())
                 self.next_question()
 
-        self.listen_tel.client.loop_stop()
+        # self.listen_tel.client.loop_stop()
                 
-        print(self.listen_tel.get_data())
+        
         
     def draw(self, surface):
         self.board.draw(surface)
