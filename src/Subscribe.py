@@ -2,6 +2,8 @@
 import random
 from paho.mqtt import client as mqtt_client
 
+subscribe_data = ""
+
 class SubscribeMQTT:
     def __init__(self):
         self.broker = 'broker.emqx.io'
@@ -25,9 +27,15 @@ class SubscribeMQTT:
         self.client.on_connect = on_connect
         self.client.connect(self.broker, self.port)
 
+    def get_data(self):
+        global subscribe_data
+        return subscribe_data
+
     def subscribe(self):
         def on_message(client, userdata, msg):
+            global subscribe_data
+            subscribe_data = msg.payload.decode('utf8')
             print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
         self.client.subscribe(self.topic)
         self.client.on_message = on_message
-        self.client.loop_forever()
+        # self.client.loop_start()
