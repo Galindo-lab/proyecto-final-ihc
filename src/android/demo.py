@@ -10,3 +10,5 @@ def x():
             foo.publish(a)
         else:
             break
+
+x()
